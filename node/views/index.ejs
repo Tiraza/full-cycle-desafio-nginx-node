@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Node App</title>
+  </head>
+  <body>
+    <h1>Full Cycle Rocks!</h1>
+    <h2>Cadastrar Nome</h2>
+    <form method="POST">
+        <input type="text" placeholder="Nome" name="name" autocomplete="off" required/>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <h2>Lista de Nomes Cadastrados</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th width="50px" scope="col">ID</th>
+                <th scope="col">Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.length){
+            for(var i = 0; i< data.length; i++) {%>  
+                <tr>
+                    <td><%= data[i].id%></td>
+                    <td><%= data[i].name%></td>                                          
+                </tr>
+            <% }
+            }else{ %>
+                <tr>
+                    <td colspan="3">No user</td>
+                </tr>
+            <% } %>    
+        </tbody>
+    </table>
+  </body>
+</html>
